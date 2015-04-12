@@ -18,6 +18,7 @@
 <p><b>Major Components of the game:</b>
 <ul>
 <li>Markets
+<li>Shares
 <li>Users
 <li>Leaderboards
 </ul></p>
@@ -27,7 +28,12 @@
 <li>Primary Market - For listing of IPO's
 <li>Secondary Market - For trading by traders</ol></p>
 <p> </p>
-<p><b>Types of users:</b>
+<p><b>Types of Shares:</b>
+<ol>
+<li>Colleges - SRCC, SBSC, NSIT, IIT, IIM etc.
+<li>Celebrities - Amitabh Bachan, Katrina Kaif, Narendra Modi, Lata Mangeshkar, Sachin Tendulkar etc.
+</ol></b>
+<p><b>Types of Users:</b>
 <ol>
 <li>Administrator - Responsible for:
 <ul><li>Listing stocks in primary market i.e coming up with IPO - Initial Public Offering.
