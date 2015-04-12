@@ -11,7 +11,7 @@
 <li>Cash (Reserved and Balance as well)
 <li>Portfolio (Stocks held)
 </ol>
-<li>Treaders' sentiments will be driven by the college news.
+<li>News related to the particular share i.e. college / celebrity will be displayed to influence the sentiments of traders.
 </ul></p>
 ====================
 <p>This will be a self sufficient independent market having its own stocks and shares whose prices will be determined based on market demand and supply.</p>
