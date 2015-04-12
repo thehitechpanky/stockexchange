@@ -12,13 +12,19 @@
 </ul></p>
 ====================
 <p>This will be a self sufficient independent market having its own stocks and shares whose prices will be determined based on market demand and supply.</p>
+<p><b>Major Components of the game:</b>
+<ul>
+<li>Markets
+<li>Users
+<li>Leaderboards
+</ul></p>
 <p> </p>
-<p>Types of Markets:
+<p><b>Types of Markets:</b>
 <ol>
 <li>Primary Market - For listing of IPO's
 <li>Secondary Market - For trading by traders</ol></p>
 <p> </p>
-<p>Types of users:
+<p><b>Types of users:</b>
 <ol>
 <li>Administrator - Responsible for:
 <ul><li>Listing stocks in primary market i.e coming up with IPO - Initial Public Offering.
@@ -30,7 +36,7 @@
 <li>They can sell the shares they own (purchased before) in the secondary market only.</ul>
 </ol></p>
 <p> </p>
-<p>Types of Leaderboards / Scorecards - to make the game interesting, competitive and meaningful
+<p><b>Types of Leaderboards / Scorecards</b> - to make the game interesting, competitive and meaningful
 <ol>
 <li>Tycoon - Showing the ranking based on net worth (Value of Shares + Cash)
 <li>Diversity - Showing the ranking based on variety of portfolio
