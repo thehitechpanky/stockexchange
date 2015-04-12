@@ -11,3 +11,11 @@
 <li>Portfolio (Stocks held)
 </ol>
 </ul>
+====================
+<p>This will be a self sufficient independent market having its own stocks and shares whose prices will be determined based on market demand.</p>
+<p>There will be two types of Markets in the game:
+<ol><li>Primary Market<li>Secondary Market</ol></p>
+<p>There will be two types of users of the game:
+<ol><li>Administrator<li>User</ol></p>
+<p>Roles of Administrator
+<ul><li>Determining and introducing stocks in primary market i.e launching IPO - Initial Public Offering</ul></p>
