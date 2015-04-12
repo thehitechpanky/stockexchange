@@ -20,7 +20,15 @@
 <li>Administrator - Responsible for:
 <ul><li>Listing stocks in primary market i.e coming up with IPO - Initial Public Offering.
 <li>Regulating and ensuring smooth flow of stock and money in the market.</ul>
-<li>Trader (Player) - Responsible for:
-<ul><li>Purchase listed shares in IPO.
-<li>Trade Shares in secondary market with other traders.</ul>
+<li>Trader (Player)
+<ul>
+<li>They will be provided with initial cash to start trading.
+<li>They can use the cash they have to make purchases in either of the two markets.
+<li>They can sell the shares they own (purchased before) in the secondary market only.</ul>
+</ol></p>
+<p>There are few leaderboards in the game to make it interesting
+<ol>
+<li>Tycoon - Showing the ranking based on net worth (Value of Shares + Cash)
+<li>Diversity - Showing the ranking based on variety of portfolio
+<li>Quantum - Showing the ranking based on number of shares held
 </ol></p>
