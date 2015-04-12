@@ -52,9 +52,8 @@
 <li>Quantum - Showing the ranking based on number of shares held
 </ol></p>
 ====================
-<p><b>Terms & Conditions</b>
-<ol><li>This game is only for fun and has nothing to do with the actual college or celebrities.
-</ol></p>
+<p><b>Disclaimer</b></p>
+<p>This game is only for fun and has nothing to do with the actual college or celebrities.</p>
 ====================
 <p><b>Contributors</b>
 <ul><li>Pankaj Jain
