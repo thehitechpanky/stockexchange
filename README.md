@@ -16,6 +16,11 @@
 <p>There will be two types of Markets in the game:
 <ol><li>Primary Market<li>Secondary Market</ol></p>
 <p>There will be two types of users of the game:
-<ol><li>Administrator<li>User</ol></p>
-<p>Roles of Administrator
-<ul><li>Determining and introducing stocks in primary market i.e launching IPO - Initial Public Offering</ul></p>
+<ol>
+<li>Administrator - Responsible for:
+<ul><li>Listing stocks in primary market i.e coming up with IPO - Initial Public Offering.
+<li>Regulating and ensuring smooth flow of stock and money in the market.</ul>
+<li>Trader (Player) - Responsible for:
+<ul><li>Purchase listed shares in IPO.
+<li>Trade Shares in secondary market with other traders.</ul>
+</ol></p>
