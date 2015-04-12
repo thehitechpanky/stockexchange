@@ -3,12 +3,15 @@
 ====================
 <p><b>Broad Features of the Game</b>
 <ul>
-<li>It will be a Realtime Trading Game Open for 24x7x365
-<li>Profile for Players containing following broad fields
+<li>It would be game not about business, but about college sentiments.
+<li>Stocks traded won't be of companies, but of various colleges.
+<li>It will be a Realtime Trading Game Open for 24x7x365.
+<li>Profile for Players containing following broad fields.
 <ol><li>Personal Details
 <li>Cash (Reserved and Balance as well)
 <li>Portfolio (Stocks held)
 </ol>
+<li>Treaders' sentiments will be driven by the college news.
 </ul></p>
 ====================
 <p>This will be a self sufficient independent market having its own stocks and shares whose prices will be determined based on market demand and supply.</p>
