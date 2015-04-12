@@ -1,7 +1,7 @@
 # Virtual Stock Exchange Game
 <p>Virtual Stock Exchange Game for Android and Other Platforms.<p>
 ====================
-<b>Broad Features of the Game</b>
+<p><b>Broad Features of the Game</b>
 <ul>
 <li>Realtime trading
 <li>Open 24x7x365
@@ -10,7 +10,7 @@
 <li>Cash (Reserved and Balance as well)
 <li>Portfolio (Stocks held)
 </ol>
-</ul>
+</ul></p>
 ====================
 <p>This will be a self sufficient independent market having its own stocks and shares whose prices will be determined based on market demand and supply.</p>
 <p>There will be two types of Markets in the game:
