@@ -13,7 +13,9 @@
 ====================
 <p>This will be a self sufficient independent market having its own stocks and shares whose prices will be determined based on market demand and supply.</p>
 <p>There will be two types of Markets in the game:
-<ol><li>Primary Market<li>Secondary Market</ol></p>
+<ol>
+<li>Primary Market - For listing of IPO's
+<li>Secondary Market - For trading by traders</ol></p>
 <p>There will be two types of users of the game:
 <ol>
 <li>Administrator - Responsible for:
