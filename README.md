@@ -3,8 +3,7 @@
 ====================
 <p><b>Broad Features of the Game</b>
 <ul>
-<li>Realtime trading
-<li>Open 24x7x365
+<li>It will be a Realtime Trading Game Open for 24x7x365
 <li>Profile for Players containing following broad fields
 <ol><li>Personal Details
 <li>Cash (Reserved and Balance as well)
