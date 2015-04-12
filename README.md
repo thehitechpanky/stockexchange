@@ -1,10 +1,10 @@
 # Virtual Stock Exchange Game
-<p>Virtual Stock Exchange Game for Android and Other Platforms.<p>
+<p>Virtual Stock Exchange Game for Android and Other Platforms.</p>
 ====================
 <p><b>Broad Features of the Game</b>
 <ul>
-<li>It would be game not about business, but about college sentiments.
-<li>Stocks traded won't be of companies, but of various colleges.
+<li>It would be game not about business, but about youth sentiments.
+<li>Stocks traded won't be of companies, but of various colleges, celebrties and cricketers.
 <li>It will be a Realtime Trading Game Open for 24x7x365.
 <li>Profile for Players containing following broad fields.
 <ol><li>Personal Details
@@ -37,11 +37,23 @@
 <li>They will be provided with initial cash to start trading.
 <li>They can use the cash they have to make purchases in either of the two markets.
 <li>They can sell the shares they own (purchased before) in the secondary market only.</ul>
-</ol></p>
 <p> </p>
+</ol></p>
 <p><b>Types of Leaderboards / Scorecards</b> - to make the game interesting, competitive and meaningful
 <ol>
 <li>Tycoon - Showing the ranking based on net worth (Value of Shares + Cash)
 <li>Diversity - Showing the ranking based on variety of portfolio
 <li>Quantum - Showing the ranking based on number of shares held
 </ol></p>
+====================
+<p><b>Terms & Conditions</b>
+<ol><li>This game is only for fun and has nothing to do with the actual college or celebrities.
+</ol></p>
+====================
+<p><b>Contributors</b>
+<ul><li>Pankaj Jain
+<li>Rahul Prajapati
+<li>Mayank Jalan
+<li>Jatin Arora
+<li>Jivanshu Singla
+</ul></p>
