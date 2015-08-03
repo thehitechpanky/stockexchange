@@ -19,6 +19,16 @@ $(document).ready(function() {
 		showQtyAvailable(this.value);
 		showMarketPrice(this.value);
 	});
+	
+	$('input[name=order]:radio').change(function () {
+		if($('#sellOrder').is(':checked')) {
+			$('#marketSecondary').prop("checked", true);
+			$('input[name=market]:radio').attr('disabled',true);
+		} else {
+			$('input[name=market]:radio').attr('disabled',false);
+		}
+	});
+	
 });
 
 function showMarketPrice(str) {
