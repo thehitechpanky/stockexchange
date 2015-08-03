@@ -1,0 +1,23 @@
+/*----------------------------------------------
+Custom CSS Settings For HTML Div
+------------------------------------------------*/
+
+.inline {
+	display: inline-block;
+}
+
+li.hidden {
+	display: none;
+}
+
+li.shown {
+	display: inline-block;
+}
+
+.hidden {
+	display: none;
+}
+
+.shown {
+	display: block;
+}
