@@ -1,4 +1,5 @@
-  // This is called with the results from from FB.getLoginStatus().
+var fbId;
+// This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
@@ -84,14 +85,18 @@ function fbId() {
 	FB.api('/me', function(response) {
 		console.log(response);
 		document.getElementById('fbName').innerHTML = response.name;
-		var fbId = response.id;
+		fbId = response.id;
+		//document.getElementById('fbId').innerHTML = fbId;
 		var cash = showCash(fbId);
 		document.getElementById('cash').innerHTML = cash;
 		var portfolio = showPortfolio(fbId);
 		document.getElementById('portfolio').innerHTML = portfolio;
 		var valuation = showValuation(fbId);
 		document.getElementById('valuation').innerHTML = valuation;
-		$.ajax({url: "./dbConfig.php", type: "GET", data: {fbId: fbId}, success: function(data) {console.log("success");} });
+		//$.post('getFbId.php', {variable: fbId});
+		//window.location.href = "getFbId.php?fbId=" + fbId;
+		//$.ajax({url: "./getFbId.php?fbId=" + fbId, success: function(result) {} });
+		//$.ajax({url: "./getFbId.php", type: "GET", data: {jsVarFbId: fbId}, success: function(data) {console.log("success");} });
 	});
 }
 
@@ -161,6 +166,46 @@ function showValuation(str) {
     }
 }
 
-function fbLogout() {
-	$("#menu ul li:nth-child(1)").after('<li><a href="#features" class="scroll">Profile</a></li>');
-  }
+function showQtyAvailable(str) {
+	if (str > 0 && $('#sellOrder').is(':checked')) {
+		if (window.XMLHttpRequest) {
+			// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttpQtyAvailable = new XMLHttpRequest();
+		} else {
+			// code for IE6, IE5
+			xmlhttpQtyAvailable = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttpQtyAvailable.onreadystatechange = function() {
+			if (xmlhttpQtyAvailable.readyState == 4 && xmlhttpQtyAvailable.status == 200) {
+				document.getElementById("qtyAvailable").innerHTML = xmlhttpQtyAvailable.responseText;
+			}
+		}
+		xmlhttpQtyAvailable.open("GET","getQtyAvailable.php?shareId="+str+"&jsVarFbId="+fbId,true);
+		xmlhttpQtyAvailable.send();
+	} else {
+		document.getElementById("qtyAvailable").innerHTML = "";
+		return;
+	}
+}
+
+function showMarketPrice(str) {
+    if (str == "") {
+        document.getElementById("marketPrice").innerHTML = "";
+        return;
+    } else { 
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttpMarketPrice = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttpMarketPrice = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttpPortfolio.onreadystatechange = function() {
+            if (xmlhttpMarketPrice.readyState == 4 && xmlhttpMarketPrice.status == 200) {
+                document.getElementById("marketPrice").innerHTML = xmlhttpMarketPrice.responseText;
+            }
+        }
+        xmlhttpMarketPrice.open("GET","getMarketPrice.php?shareId="+str,true);
+        xmlhttpMarketPrice.send();
+    }
+}
