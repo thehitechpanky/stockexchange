@@ -52,8 +52,26 @@ $(document).ready(function() {
 	});
 	
 	$('#shareId').change(function() {
-		showQtyAvailable(this.value);
-		showMarketPrice(this.value);
+		//if(('#shareName').val() == '') {
+			//Nothing is required here.
+		//} else {
+			if($('#shareId').val() == 0) {
+				// Nothing is required here.
+			} else {
+				if($('#marketPrimary').is(':checked')) {
+					showMaxBidQty(this.value);
+					//$('#maxBidQty').attr('class','shown');
+				} else {
+					if($('#sellOrder').is(':checked')) {
+						showQtyAvailable(this.value);
+					} else {
+						$('#qtyAvailable').attr('class','hidden');
+					}
+					$('#maxBidQty').attr('class','hidden');
+				}
+			}
+			showMarketPrice($('#shareId').val());
+		//}
 	});
 	
 	$('input[name=market]:radio').change(function () {
@@ -65,15 +83,11 @@ $(document).ready(function() {
 			$('#bidOrder').attr('disabled',true);
 			$('#buyOrder').prop("checked", true);
 		}
+		$('#shareId').change();
 	});
 
 	$('input[name=order]:radio').change(function () {
-		if($('#sellOrder').is(':checked')) {
-			showQtyAvailable($('#shareId').val());
-			$('#qtyAvailable').attr('class','shown');
-		} else {
-			$('#qtyAvailable').attr('class','hidden');
-		}
+		$('#shareId').change();
 	});
 	
 });
@@ -93,6 +107,23 @@ function showMarketPrice(str) {
         }
         xmlhttpMarketPrice.open("GET","getMarketPrice.php?shareId="+str,true);
         xmlhttpMarketPrice.send();
+}
+
+function showMaxBidQty(str) {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttpMaxBidQty = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttpMaxBidQty = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttpMaxBidQty.onreadystatechange = function() {
+            if (xmlhttpMaxBidQty.readyState == 4 && xmlhttpMaxBidQty.status == 200) {
+                document.getElementById("maxBidQty").innerHTML = xmlhttpMaxBidQty.responseText;
+            }
+        }
+        xmlhttpMaxBidQty.open("GET","getMaxBidQty.php?shareId="+str,true);
+        xmlhttpMaxBidQty.send();
 }
 
 var delay = (function(){
