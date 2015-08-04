@@ -15,24 +15,70 @@ $(document).ready(function() {
 		mainClass: 'my-mfp-zoom-in'
 	});
 	
+	var listOption = null;
+	
+	// If share name is changed
+	$('#shareName').change(function() {
+		var index = 0;
+		var val = $('#shareName').val();
+		for(var i = 0; listOption && i < listOption.length; i++) {
+			if(listOption[i].sharename === val) {
+				$("#shareId").val(listOption[i].shareid);
+				break;
+			} else {
+				$("#shareId").val(0);
+			}
+		}
+		$("#shareId").change();
+	});
+	
+	// This is keyup
+	$('#shareName').keyup(function() {
+		delay(function() {
+			$.ajax({url: "./getShareOptions.php?shareNameInput=" + $('#shareName').val(),
+				success: function(result) {
+					if(result && result.length) {
+						//console.log(result);
+						listOption = JSON.parse(result);
+						var str = "";
+						for(var i = 0 ; listOption && i < listOption.length; i++) {
+							str += '<option value="' + listOption[i].sharename + '" />'; // Storing options in variable
+				   		}
+				   		$("#shareList").html(str);
+					}
+				}
+			  },2000);
+		});
+	});
+	
 	$('#shareId').change(function() {
 		showQtyAvailable(this.value);
 		showMarketPrice(this.value);
 	});
 	
+	$('input[name=market]:radio').change(function () {
+		if($('#marketPrimary').is(':checked')) {
+			$('#bidOrder').prop("checked", true);
+			$('input[name=order]:radio').attr('disabled',true);
+		} else {
+			$('input[name=order]:radio').attr('disabled',false);
+			$('#bidOrder').attr('disabled',true);
+			$('#buyOrder').prop("checked", true);
+		}
+	});
+
 	$('input[name=order]:radio').change(function () {
 		if($('#sellOrder').is(':checked')) {
-			$('#marketSecondary').prop("checked", true);
-			$('input[name=market]:radio').attr('disabled',true);
+			showQtyAvailable($('#shareId').val());
+			$('#qtyAvailable').attr('class','shown');
 		} else {
-			$('input[name=market]:radio').attr('disabled',false);
+			$('#qtyAvailable').attr('class','hidden');
 		}
 	});
 	
 });
 
 function showMarketPrice(str) {
-    if (str > 0) {
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttpMarketPrice = new XMLHttpRequest();
@@ -47,8 +93,12 @@ function showMarketPrice(str) {
         }
         xmlhttpMarketPrice.open("GET","getMarketPrice.php?shareId="+str,true);
         xmlhttpMarketPrice.send();
-    } else { 
-       document.getElementById("marketPrice").innerHTML = "";
-       return; 
-    }
 }
+
+var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+  clearTimeout (timer);
+  timer = setTimeout(callback, ms);
+ };
+})();
