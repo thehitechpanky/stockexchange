@@ -52,26 +52,29 @@ $(document).ready(function() {
 	});
 	
 	$('#shareId').change(function() {
-		//if(('#shareName').val() == '') {
-			//Nothing is required here.
-		//} else {
+		if($('#shareName').val().length === 0) {
+			$('#marketPrice').attr('class','hidden');
+		} else {
+			$('#marketPrice').attr('class','shown');
+			showMarketPrice($('#shareId').val());
 			if($('#shareId').val() == 0) {
 				// Nothing is required here.
 			} else {
 				if($('#marketPrimary').is(':checked')) {
-					showMaxBidQty(this.value);
-					//$('#maxBidQty').attr('class','shown');
+					showMaxBidQty($('#shareId').val());
+					$('#maxBidQty').attr('class','shown');
+					$('#qtyAvailable').attr('class','hidden');
 				} else {
+					$('#maxBidQty').attr('class','hidden');
 					if($('#sellOrder').is(':checked')) {
-						showQtyAvailable(this.value);
+						$('#qtyAvailable').attr('class','shown');
+						showQtyAvailable($('#shareId').val());
 					} else {
 						$('#qtyAvailable').attr('class','hidden');
 					}
-					$('#maxBidQty').attr('class','hidden');
 				}
 			}
-			showMarketPrice($('#shareId').val());
-		//}
+		}
 	});
 	
 	$('input[name=market]:radio').change(function () {
