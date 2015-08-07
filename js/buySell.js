@@ -17,12 +17,27 @@ $(document).ready(function() {
 	
 	var listOption = null;
 	
-	// If share name is changed
-	$('#shareName').change(function() {
+	// If share name is changed using keyboard
+	$('#shareName').keyup(function() {
 		var index = 0;
 		var val = $('#shareName').val();
 		for(var i = 0; listOption && i < listOption.length; i++) {
-			if(listOption[i].sharename === val) {
+			if(listOption[i].sharename.toLowerCase() === val.toLowerCase()) {
+				$("#shareId").val(listOption[i].shareid);
+				break;
+			} else {
+				$("#shareId").val(0);
+			}
+		}
+		$("#shareId").change();
+	});
+	
+	// If share name is changed using mouse
+	$('#shareName').bind('input', function() {
+		var index = 0;
+		var val = $('#shareName').val();
+		for(var i = 0; listOption && i < listOption.length; i++) {
+			if(listOption[i].sharename.toLowerCase() === val.toLowerCase()) {
 				$("#shareId").val(listOption[i].shareid);
 				break;
 			} else {
@@ -52,6 +67,7 @@ $(document).ready(function() {
 	});
 	
 	$('#shareId').change(function() {
+		$('#orderQty').keyup();
 		if($('#shareName').val().length === 0) {
 			$('#marketPrice').attr('class','hidden');
 		} else {
@@ -71,6 +87,37 @@ $(document).ready(function() {
 						showQtyAvailable($('#shareId').val());
 					} else {
 						$('#qtyAvailable').attr('class','hidden');
+					}
+				}
+			}
+		}
+	});
+
+	$('#orderQty').keyup(function() {
+		var qtyCheck = document.getElementById('qtyCheck');
+		var maxBidQty = document.getElementById('maxBidQty');
+		$('#qtyCheck').attr('class','shown');
+		if($('#shareName').val().length === 0) {
+			qtyCheck.innerHTML = "Please select a share first.";
+		} else {
+			if($('#shareId').val() == 0) {
+				qtyCheck.innerHTML = "Invalid Share selected.";
+			} else {
+				if($('#marketPrimary').is(':checked')) {
+					qtyCheck.innerHTML = extractNo(maxBidQty.innerHTML);
+					// We will check that the order Qty must be between 0 and #maxBidQty
+					//if($('#orderQty').val() < maxBidQty) {
+						//qtyCheck.innerHTML = "Order Qty OK.";
+					//} else {
+						//qtyCheck.innerHTML = "Your Order Qty must be between 0 and Max Bid Qty";
+						
+					//}
+				} else {
+					if($('#sellOrder').is(':checked')) {
+						// We will check that the order Qty must be between 0 and #qtyAvaialable
+						qtyCheck.innerHTML = "Order Qty OK.";
+					} else {
+						$('#qtyCheck').attr('class','hidden');
 					}
 				}
 			}
@@ -127,6 +174,15 @@ function showMaxBidQty(str) {
         }
         xmlhttpMaxBidQty.open("GET","getMaxBidQty.php?shareId="+str,true);
         xmlhttpMaxBidQty.send();
+}
+
+function extractNo(str) {
+	var r = /\d+/g;
+	var m;
+	while ((m = r.exec(str)) != null) {
+	  return (m[0]);
+		//alert(m[0]);
+	}
 }
 
 var delay = (function(){
