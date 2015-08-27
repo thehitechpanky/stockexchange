@@ -1,6 +1,12 @@
 # Virtual Stock Exchange Game
 <p>Virtual Stock Exchange Game for Android and Other Platforms.</p>
 ====================
+<h1>How's it different from other Stock Exchange Games?</h1>
+<ol>
+<li>First game that let's you bid for an IPO
+<li>First game that let's you launch your own IPO
+<li>First game that let's you trade in shares of identities you're sentimentally attached with
+</ol>
 <p><b>Broad Features of the Game</b>
 <ul>
 <li>It would be game not about business, but about youth sentiments.
